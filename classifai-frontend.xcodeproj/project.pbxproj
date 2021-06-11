@@ -11,7 +11,6 @@
 		9668FF94267351360063FCCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF93267351360063FCCD /* ContentView.swift */; };
 		9668FF96267351530063FCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9668FF95267351530063FCCD /* Assets.xcassets */; };
 		9668FF99267351530063FCCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9668FF98267351530063FCCD /* Preview Assets.xcassets */; };
-		9668FFA22673529B0063FCCD /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 9668FFA12673529B0063FCCD /* Fonts */; };
 		9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFA9267353CA0063FCCD /* Fonts.swift */; };
 		9668FFBE267354030063FCCD /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9668FFAF267354010063FCCD /* Nunito-ExtraBoldItalic.ttf */; };
 		9668FFBF267354030063FCCD /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9668FFB0267354010063FCCD /* Nunito-ExtraBold.ttf */; };
@@ -38,7 +37,6 @@
 		9668FF95267351530063FCCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9668FF98267351530063FCCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9668FF9A267351530063FCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9668FFA12673529B0063FCCD /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../../frontend/frontend/Fonts; sourceTree = "<group>"; };
 		9668FFA9267353CA0063FCCD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9668FFAF267354010063FCCD /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-ExtraBoldItalic.ttf"; path = "../../../../../../Downloads/Nunito/Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		9668FFB0267354010063FCCD /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-ExtraBold.ttf"; path = "../../../../../../Downloads/Nunito/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			children = (
 				9668FFA8267353B40063FCCD /* Fonts */,
 				9668FFA7267353A50063FCCD /* Views */,
-				9668FFA12673529B0063FCCD /* Fonts */,
 				9668FF91267351360063FCCD /* classifai_frontendApp.swift */,
 				9668FF93267351360063FCCD /* ContentView.swift */,
 				9668FF95267351530063FCCD /* Assets.xcassets */,
@@ -206,7 +203,6 @@
 			files = (
 				9668FFC1267354030063FCCD /* Nunito-SemiBold.ttf in Resources */,
 				9668FFC3267354030063FCCD /* Nunito-ExtraLightItalic.ttf in Resources */,
-				9668FFA22673529B0063FCCD /* Fonts in Resources */,
 				9668FFC0267354030063FCCD /* Nunito-Italic.ttf in Resources */,
 				9668FFC5267354030063FCCD /* Nunito-ExtraLight.ttf in Resources */,
 				9668FF99267351530063FCCD /* Preview Assets.xcassets in Resources */,
