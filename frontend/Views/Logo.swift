@@ -5,6 +5,8 @@
 //  Created by Allen Gu on 6/10/21.
 //
 
+//allen is gay.
+
 import SwiftUI
 
 struct Logo: View {
