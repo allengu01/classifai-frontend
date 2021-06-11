@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15EF8EDD267363160097104D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EDC267363160097104D /* Results.swift */; };
 		9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF91267351360063FCCD /* classifai_frontendApp.swift */; };
 		9668FF94267351360063FCCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF93267351360063FCCD /* ContentView.swift */; };
 		9668FF96267351530063FCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9668FF95267351530063FCCD /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15EF8EDC267363160097104D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		9668FF8E267351360063FCCD /* classifai-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "classifai-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9668FF91267351360063FCCD /* classifai_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classifai_frontendApp.swift; sourceTree = "<group>"; };
 		9668FF93267351360063FCCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15EF8EDF267363300097104D /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				9668FFCE2673542A0063FCCD /* Logo.swift */,
+			);
+			path = HelperViews;
+			sourceTree = "<group>";
+		};
 		9668FF85267351360063FCCD = {
 			isa = PBXGroup;
 			children = (
@@ -57,10 +67,11 @@
 		9668FF90267351360063FCCD /* classifai-frontend */ = {
 			isa = PBXGroup;
 			children = (
-				9668FFA8267353B40063FCCD /* Fonts */,
-				9668FFA7267353A50063FCCD /* Views */,
 				9668FF91267351360063FCCD /* classifai_frontendApp.swift */,
 				9668FF93267351360063FCCD /* ContentView.swift */,
+				9668FFA8267353B40063FCCD /* Fonts */,
+				9668FFA7267353A50063FCCD /* Views */,
+				15EF8EDF267363300097104D /* HelperViews */,
 				9668FF95267351530063FCCD /* Assets.xcassets */,
 				9668FF9A267351530063FCCD /* Info.plist */,
 				9668FF97267351530063FCCD /* Preview Content */,
@@ -79,7 +90,7 @@
 		9668FFA7267353A50063FCCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9668FFCE2673542A0063FCCD /* Logo.swift */,
+				15EF8EDC267363160097104D /* Results.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 				9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */,
 				9668FFCF2673542B0063FCCD /* Logo.swift in Sources */,
 				9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */,
+				15EF8EDD267363160097104D /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
