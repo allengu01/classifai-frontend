@@ -9,31 +9,25 @@ import SwiftUI
 
 struct HomeMenu: View {
     var body: some View {
-        ZStack {
-            VStack(alignment: .center) {
-                NavigationLink(
-                    destination: Results()) {
-                    HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
-                }
-                Spacer()
+        VStack(alignment: .center) {
+            NavigationLink(
+                destination: Results()) {
+                HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
             }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .center
-            )
-            .padding(.vertical, 40)
+            Spacer()
         }
         .frame(
             minWidth: 0,
             maxWidth: .infinity,
             minHeight: 0,
             maxHeight: .infinity,
-            alignment: .topLeading
+            alignment: .center
         )
-        .background(Color(red: 84/255, green: 98/255, blue: 123/255))
+        .padding(.vertical, 40)
+        .background(RoundingCornersShape(corners: [.topLeft, .topRight], radius: 10)
+            .fill(Color(red: 84/255, green: 98/255, blue: 123/255))
+        )
+        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
     }
 }
 
