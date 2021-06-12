@@ -11,7 +11,14 @@ import SwiftUI
 
 struct Results: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            CircleImage(image: Image("Allen"))
+                .padding(.leading, 75.0)
+                .padding(.top, 71.0)
+                .padding(.bottom, 51.0)
+            ResultsMenu()
+        }
+        .ignoresSafeArea()
     }
 }
 
