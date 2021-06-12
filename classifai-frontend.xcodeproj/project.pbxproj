@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		15EF8EDD267363160097104D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EDC267363160097104D /* Results.swift */; };
+		9668000026747ABD0063FCCD /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFFF26747ABD0063FCCD /* HomeButton.swift */; };
 		9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF91267351360063FCCD /* classifai_frontendApp.swift */; };
 		9668FF94267351360063FCCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF93267351360063FCCD /* ContentView.swift */; };
 		9668FF96267351530063FCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9668FF95267351530063FCCD /* Assets.xcassets */; };
 		9668FF99267351530063FCCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9668FF98267351530063FCCD /* Preview Assets.xcassets */; };
 		9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFA9267353CA0063FCCD /* Fonts.swift */; };
 		9668FFCF2673542B0063FCCD /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFCE2673542A0063FCCD /* Logo.swift */; };
+		9668FFFA267479530063FCCD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFF9267479530063FCCD /* Home.swift */; };
+		9668FFFD2674799D0063FCCD /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFFC2674799D0063FCCD /* HomeMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		9668FFA9267353CA0063FCCD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9668FFCE2673542A0063FCCD /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		9668FFF6267357690063FCCD /* Nunito */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Nunito; path = "../../classifai-frontend.xcodeproj/Nunito"; sourceTree = "<group>"; };
+		9668FFF9267479530063FCCD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9668FFFC2674799D0063FCCD /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenu.swift; sourceTree = "<group>"; };
+		9668FFFF26747ABD0063FCCD /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				9668FFCE2673542A0063FCCD /* Logo.swift */,
+				9668FFFC2674799D0063FCCD /* HomeMenu.swift */,
+				9668FFFF26747ABD0063FCCD /* HomeButton.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				15EF8EDC267363160097104D /* Results.swift */,
+				9668FFF9267479530063FCCD /* Home.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,10 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9668000026747ABD0063FCCD /* HomeButton.swift in Sources */,
 				9668FF94267351360063FCCD /* ContentView.swift in Sources */,
 				9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */,
+				9668FFFD2674799D0063FCCD /* HomeMenu.swift in Sources */,
 				9668FFCF2673542B0063FCCD /* Logo.swift in Sources */,
 				9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */,
+				9668FFFA267479530063FCCD /* Home.swift in Sources */,
 				15EF8EDD267363160097104D /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
