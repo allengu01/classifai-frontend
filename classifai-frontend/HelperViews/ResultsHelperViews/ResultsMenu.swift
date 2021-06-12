@@ -8,19 +8,45 @@
 import SwiftUI
 
 struct ResultsMenu: View {
+    var label1m: String
+    var value1m: Int
+    var label2m: String
+    var value2m: Int
+    var label3m: String
+    var value3m: Int
+    var label4m: String
+    var value4m: Int
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 5) {
             HStack {
-                PrimaryLabel(label: "dog")
-                Spacer()
-                PrimaryValue(value: 78)
+                PrimaryLabel(label: label1m)
+                Rectangle()
+                    .fill(Color.gray)
+                    .frame(width: 2, height: 18)
+                    .edgesIgnoringSafeArea(.horizontal)
+                PrimaryValue(value: value1m)
             }
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: 50, height: 1)
+                .edgesIgnoringSafeArea(.vertical)
+                .padding(.bottom, 25)
             HStack {
-                SecondaryLabel(label: "beluga whale")
-                Spacer()
-                SecondaryValue(value: 12)
+                SecondaryLabel(label: label2m)
+                SecondaryValue(value: value2m)
             }
+            .padding(.bottom, 8)
+            HStack {
+                SecondaryLabel(label: label3m)
+                SecondaryValue(value: value2m)
+            }
+            .padding(.bottom, 8)
+            HStack {
+                SecondaryLabel(label: label4m)
+                SecondaryValue(value: value4m)
+            }
+            .padding(.bottom, 80)
             ResultsTryAgainButton(primaryText: "try again")
         }
         .padding(.vertical, 0)
@@ -40,6 +66,9 @@ struct ResultsMenu: View {
 
 struct ResultsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsMenu()
+        ResultsMenu(label1m: "dog", value1m: 78,
+                    label2m: "beluga whale", value2m: 12,
+                    label3m: "cow", value3m: 6,
+                    label4m: "walrus", value4m: 4)
     }
 }

@@ -11,7 +11,11 @@ struct HomeMenu: View {
     var body: some View {
         VStack(alignment: .center) {
             NavigationLink(
-                destination: Results()) {
+                //THIS IS FUCKING WRONG!!!
+                destination: Results(label1: "dog", value1: 78,
+                                     label2: "beluga whale", value2: 12,
+                                     label3: "cow", value3: 6,
+                                     label4: "walrus", value4: 4)) {
                 HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
             }
             Spacer()
