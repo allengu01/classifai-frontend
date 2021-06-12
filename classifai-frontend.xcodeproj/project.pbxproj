@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15EF8EDD267363160097104D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EDC267363160097104D /* Results.swift */; };
+		15EF8EEA2674946D0097104D /* ResultsTryAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EE92674946D0097104D /* ResultsTryAgainButton.swift */; };
 		9668000026747ABD0063FCCD /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFFF26747ABD0063FCCD /* HomeButton.swift */; };
 		9668000326748E9A0063FCCD /* RoundingCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668000226748E9A0063FCCD /* RoundingCornersShape.swift */; };
 		9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FF91267351360063FCCD /* classifai_frontendApp.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		15EF8EDC267363160097104D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		15EF8EE92674946D0097104D /* ResultsTryAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTryAgainButton.swift; sourceTree = "<group>"; };
 		9668000226748E9A0063FCCD /* RoundingCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingCornersShape.swift; sourceTree = "<group>"; };
 		9668FF8E267351360063FCCD /* classifai-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "classifai-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9668FF91267351360063FCCD /* classifai_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classifai_frontendApp.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				9668FFFC2674799D0063FCCD /* HomeMenu.swift */,
 				9668FFFF26747ABD0063FCCD /* HomeButton.swift */,
 				9668000226748E9A0063FCCD /* RoundingCornersShape.swift */,
+				15EF8EE92674946D0097104D /* ResultsTryAgainButton.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				9668FF94267351360063FCCD /* ContentView.swift in Sources */,
 				9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */,
 				9668FFFD2674799D0063FCCD /* HomeMenu.swift in Sources */,
+				15EF8EEA2674946D0097104D /* ResultsTryAgainButton.swift in Sources */,
 				9668FFCF2673542B0063FCCD /* Logo.swift in Sources */,
 				9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */,
 				9668FFFA267479530063FCCD /* Home.swift in Sources */,
