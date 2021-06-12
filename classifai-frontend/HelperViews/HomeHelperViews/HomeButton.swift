@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeButton: View {
     var primaryText: String
-    var secondaryText: String
+    var secondaryText: String?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,10 +17,12 @@ struct HomeButton: View {
                 .font(Fonts.getFont(.nunito, .bold, 18))
                 .foregroundColor(Color(red: 34/255, green: 34/255, blue: 34/255))
                 .padding(.leading, 20)
-            Text(secondaryText)
-                .font(Fonts.getFont(.nunito, .regular, 14))
-                .foregroundColor(Color(red: 85/255, green: 85/255, blue: 85/255))
-                .padding(.leading, 20)
+            if (secondaryText != nil) {
+                Text(secondaryText!)
+                    .font(Fonts.getFont(.nunito, .regular, 14))
+                    .foregroundColor(Color(red: 85/255, green: 85/255, blue: 85/255))
+                    .padding(.leading, 20)
+            }
         }
         .frame(
             width: 260,
