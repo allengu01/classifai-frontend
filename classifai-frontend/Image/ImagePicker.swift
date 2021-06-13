@@ -5,10 +5,14 @@
 //  Created by Eric Wang on 6/13/21.
 //
 
+//https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
+
 import UIKit
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
+    
+    @EnvironmentObject var modelData: ModelData
     
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     

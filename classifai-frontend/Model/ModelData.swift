@@ -1,13 +1,9 @@
 //
-//  Result.swift
+//  ModelData.swift
 //  classifai-frontend
 //
-//  Created by Eric Wang on 6/12/21.
+//  Created by Eric Wang on 6/13/21.
 //
-
-import Foundation
-import SwiftUI
-import CoreLocation
 
 //BACKEND ARTICLE: https://engineering.nodesagency.com/categories/ios/2020/03/16/Combine-networking-with-a-hint-of-swiftUI
 
@@ -20,14 +16,19 @@ import CoreLocation
 //    @Published var image: Image
 //}
 
-struct resultObject {
-    var image: Image
-    var label1: String
-    var label2: String
-    var label3: String
-    var label4: String
-    var value1: Int
-    var value2: Int
-    var value3: Int
-    var value4: Int
+import Foundation
+import Combine
+
+final class ModelData: ObservableObject {
+    //@Published var image: Image {
+    //    Image(imageName)
+    //}
+    @Published var label1: String = "sex"
+    @Published var value1: Int = 69
+    @Published var label2: String = "a"
+    @Published var value2: Int = 0
+    @Published var label3: String = "b"
+    @Published var value3: Int = 0
+    @Published var label4: String = "c"
+    @Published var value4: Int = 0
 }
