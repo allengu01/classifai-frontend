@@ -11,10 +11,6 @@ struct HomeButton: View {
     var primaryText: String
     var secondaryText: String?
     
-    @State var image: Image? = nil
-    
-    @State var showCaptureImageView: Bool = false
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text(primaryText)

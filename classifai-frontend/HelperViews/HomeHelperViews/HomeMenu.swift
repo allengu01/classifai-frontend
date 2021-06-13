@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct HomeMenu: View {
+    
+    @State private var isShowPhotoLibrary = false
+    @State private var image = UIImage()
+    
     var body: some View {
         VStack(alignment: .center) {
-            NavigationLink(
-                //THIS IS FUCKING WRONG!!!
-                destination: Results(label1: "dog", value1: 78,
-                                     label2: "beluga whale", value2: 12,
-                                     label3: "cow", value3: 6,
-                                     label4: "walrus", value4: 4)) {
+            Button(action: {
+                self.isShowPhotoLibrary = true
+            }) {
                 HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
             }
             Spacer()
@@ -32,6 +33,10 @@ struct HomeMenu: View {
             .fill(Color(red: 84/255, green: 98/255, blue: 123/255))
         )
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+        .sheet(isPresented: $isShowPhotoLibrary) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+        }
+        
     }
 }
 
