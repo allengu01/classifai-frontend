@@ -11,6 +11,10 @@ struct HomeButton: View {
     var primaryText: String
     var secondaryText: String?
     
+    @State var image: Image? = nil
+    
+    @State var showCaptureImageView: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(primaryText)
@@ -32,7 +36,6 @@ struct HomeButton: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-
     }
 }
 
