@@ -21,12 +21,12 @@ struct Results: View {
                     .padding(.bottom, geometry.size.height*0.05)
                 VStack(alignment: .center, spacing: 5) {
                     HStack {
-                        PrimaryLabel(label: modelData.label1)
+                        PrimaryLabel(label: modelData.labels[0])
                         Rectangle()
                             .fill(Color.gray)
                             .frame(width: 2, height: 18)
                             .edgesIgnoringSafeArea(.horizontal)
-                        PrimaryValue(value: modelData.value1)
+                        PrimaryValue(value: modelData.values[0])
                     }
                     .padding(.top, 25)
                     Rectangle()
@@ -36,14 +36,14 @@ struct Results: View {
                         .padding(.bottom, 25)
                     HStack (spacing: 80){
                         VStack (alignment: .leading, spacing: 10) {
-                            SecondaryLabel(label: modelData.label2)
-                            SecondaryLabel(label: modelData.label3)
-                            SecondaryLabel(label: modelData.label4)
+                            SecondaryLabel(label: modelData.labels[1])
+                            SecondaryLabel(label: modelData.labels[2])
+                            SecondaryLabel(label: modelData.labels[3])
                         }
                         VStack (alignment: .trailing, spacing: 15){
-                            SecondaryValue(value: modelData.value2)
-                            SecondaryValue(value: modelData.value3)
-                            SecondaryValue(value: modelData.value4)
+                            SecondaryValue(value: modelData.values[1])
+                            SecondaryValue(value: modelData.values[2])
+                            SecondaryValue(value: modelData.values[3])
                         }
                     }
                     Spacer()

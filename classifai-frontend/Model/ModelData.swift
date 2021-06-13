@@ -23,12 +23,6 @@ final class ModelData: ObservableObject {
     //@Published var image: Image {
     //    Image(imageName)
     //}
-    @Published var label1: String = "sex"
-    @Published var value1: Int = 69
-    @Published var label2: String = "a"
-    @Published var value2: Int = 0
-    @Published var label3: String = "b"
-    @Published var value3: Int = 0
-    @Published var label4: String = "c"
-    @Published var value4: Int = 0
+    @Published var labels: [String] = ["sex", "poop", "pee", "bwah"]
+    @Published var values: [Int] = [69, 1, 2, 3]
 }
