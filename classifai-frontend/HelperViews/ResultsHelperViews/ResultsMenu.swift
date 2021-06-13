@@ -27,27 +27,27 @@ struct ResultsMenu: View {
                     .edgesIgnoringSafeArea(.horizontal)
                 PrimaryValue(value: value1m)
             }
+            .padding(.top, 25)
             Rectangle()
                 .fill(Color.white)
                 .frame(width: 50, height: 1)
                 .edgesIgnoringSafeArea(.vertical)
                 .padding(.bottom, 25)
-            HStack {
-                SecondaryLabel(label: label2m)
-                SecondaryValue(value: value2m)
-            }
-            .padding(.bottom, 8)
-            HStack {
-                SecondaryLabel(label: label3m)
-                SecondaryValue(value: value2m)
-            }
-            .padding(.bottom, 8)
-            HStack {
-                SecondaryLabel(label: label4m)
-                SecondaryValue(value: value4m)
+            HStack (spacing: 80){
+                VStack (alignment: .leading, spacing: 10) {
+                    SecondaryLabel(label: label2m)
+                    SecondaryLabel(label: label3m)
+                    SecondaryLabel(label: label4m)
+                }
+                VStack (alignment: .trailing, spacing: 15){
+                    SecondaryValue(value: value2m)
+                    SecondaryValue(value: value3m)
+                    SecondaryValue(value: value4m)
+                }
             }
             .padding(.bottom, 80)
             ResultsTryAgainButton(primaryText: "try again")
+            Spacer()
         }
         .padding(.vertical, 0)
         .frame(

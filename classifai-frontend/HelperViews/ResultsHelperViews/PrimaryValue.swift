@@ -12,7 +12,7 @@ struct PrimaryValue: View {
     
     var body: some View {
         Text(String(value) + "%")
-            .font(Fonts.getFont(.nunito, .bold, 18))
+            .font(Fonts.getFont(.nunito, .regular, 18))
             .foregroundColor(Color(red: 205/255, green: 205/255, blue: 205/255))
     }
 }

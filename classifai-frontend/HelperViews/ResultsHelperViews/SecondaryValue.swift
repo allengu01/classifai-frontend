@@ -12,7 +12,7 @@ struct SecondaryValue: View {
     
     var body: some View {
         Text(String(value) + "%")
-            .font(Fonts.getFont(.nunito, .bold, 14))
+            .font(Fonts.getFont(.nunito, .regular, 14))
             .foregroundColor(Color(red: 205/255, green: 205/255, blue: 205/255))
     }
 }
