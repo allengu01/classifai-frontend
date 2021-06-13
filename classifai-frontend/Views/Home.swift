@@ -9,14 +9,17 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Logo()
-                .padding(.leading, 58.0)
-                .padding(.top, 155.0)
-                .padding(.bottom, 93.0)
-            HomeMenu()
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                Logo()
+                    .padding(.bottom, geometry.size.height * 0.1)
+                    .padding(.leading, geometry.size.width * 0.133)
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.4, alignment: .bottomLeading)
+                    
+                HomeMenu()
+            }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 
