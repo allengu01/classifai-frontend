@@ -16,6 +16,9 @@
 		15A0C026267699D400BF0F41 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0C025267699D400BF0F41 /* ModelData.swift */; };
 		15EF8EDD267363160097104D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EDC267363160097104D /* Results.swift */; };
 		15EF8EEA2674946D0097104D /* ResultsTryAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EF8EE92674946D0097104D /* ResultsTryAgainButton.swift */; };
+		96592CDC267C14B3001E4FF7 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96592CDB267C14B3001E4FF7 /* Input.swift */; };
+		96592CDE267C14BE001E4FF7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96592CDD267C14BE001E4FF7 /* Result.swift */; };
+		96592CE0267C15FB001E4FF7 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96592CDF267C15FB001E4FF7 /* Backend.swift */; };
 		9668000026747ABD0063FCCD /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668FFFF26747ABD0063FCCD /* HomeButton.swift */; };
 		9668000326748E9A0063FCCD /* RoundingCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668000226748E9A0063FCCD /* RoundingCornersShape.swift */; };
 		9668002126749E8C0063FCCD /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9668001226749E880063FCCD /* OFL.txt */; };
@@ -55,6 +58,9 @@
 		15A0C025267699D400BF0F41 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		15EF8EDC267363160097104D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		15EF8EE92674946D0097104D /* ResultsTryAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTryAgainButton.swift; sourceTree = "<group>"; };
+		96592CDB267C14B3001E4FF7 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		96592CDD267C14BE001E4FF7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		96592CDF267C15FB001E4FF7 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		9668000226748E9A0063FCCD /* RoundingCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingCornersShape.swift; sourceTree = "<group>"; };
 		9668001226749E880063FCCD /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		9668001326749E880063FCCD /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				15A0C025267699D400BF0F41 /* ModelData.swift */,
+				96592CDB267C14B3001E4FF7 /* Input.swift */,
+				96592CDD267C14BE001E4FF7 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				96F2DDD0267BE8C300A22B14 /* PhotoPicker.swift */,
 				15A0C0212675BECE00BF0F41 /* ImagePicker.swift */,
 				96F2DDDB267BFDE200A22B14 /* ContentNavigationState.swift */,
+				96592CDF267C15FB001E4FF7 /* Backend.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -317,12 +326,14 @@
 				15A0C0072674ABA100BF0F41 /* SecondaryValue.swift in Sources */,
 				96F2DDD1267BE8C300A22B14 /* PhotoPicker.swift in Sources */,
 				15A0C0222675BECE00BF0F41 /* ImagePicker.swift in Sources */,
+				96592CE0267C15FB001E4FF7 /* Backend.swift in Sources */,
 				9668000326748E9A0063FCCD /* RoundingCornersShape.swift in Sources */,
 				9668FF94267351360063FCCD /* ContentView.swift in Sources */,
 				9668FFAA267353CA0063FCCD /* Fonts.swift in Sources */,
 				9668FFFD2674799D0063FCCD /* HomeMenu.swift in Sources */,
 				15EF8EEA2674946D0097104D /* ResultsTryAgainButton.swift in Sources */,
 				9668FFCF2673542B0063FCCD /* Logo.swift in Sources */,
+				96592CDC267C14B3001E4FF7 /* Input.swift in Sources */,
 				9668FF92267351360063FCCD /* classifai_frontendApp.swift in Sources */,
 				15A0C026267699D400BF0F41 /* ModelData.swift in Sources */,
 				15A0BFEB2674A11600BF0F41 /* CircleImage.swift in Sources */,
@@ -330,6 +341,7 @@
 				96F2DDDC267BFDE200A22B14 /* ContentNavigationState.swift in Sources */,
 				15EF8EDD267363160097104D /* Results.swift in Sources */,
 				15A0C0012674A9CB00BF0F41 /* SecondaryLabel.swift in Sources */,
+				96592CDE267C14BE001E4FF7 /* Result.swift in Sources */,
 				15A0C0042674AABD00BF0F41 /* PrimaryValue.swift in Sources */,
 				15A0BFFE2674A6D500BF0F41 /* PrimaryLabel.swift in Sources */,
 			);
