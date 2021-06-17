@@ -10,11 +10,11 @@ import SwiftUI
 struct Home: View {
 //    @State private var photoPickerIsPresented: Bool = false
 //    @State private var pickerResult: [UIImage] = [] // PHPicker
+    @EnvironmentObject var modelData: ModelData
+//    @Binding var selection: ContentNavigationState?
     @State private var image: Image?
     @State private var showingImagePicker: Bool = false
     @State private var inputImage: UIImage? // ImagePicker
-    @EnvironmentObject var modelData: ModelData
-//    @Binding var selection: ContentNavigationState?
     @State private var isShowingResults: Bool = false
 
     // On dismissing the modal, stores image to environment and sends to backend
@@ -37,7 +37,8 @@ struct Home: View {
                     .padding(.leading, geometry.size.width * 0.133)
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.4, alignment: .bottomLeading)
                     
-                HomeMenu(isShowPhotoLibrary: $showingImagePicker, isShowingResults: $isShowingResults)
+                HomeMenu(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, isShowingResults: $isShowingResults)
+                
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: self.$inputImage)
