@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var modelData = ModelData()
+//    @State private var selection: ContentNavigationState? = .home
+    @State private var isShowingResults: Bool = false
+    
     var body: some View {
         NavigationView {
-            Home()
+            NavigationLink(destination: Results(isShowingResults: $isShowingResults), isActive: $isShowingResults) {
+                Home(isShowingResults: $isShowingResults)
+            }
         }
+        .environmentObject(modelData)
     }
 }
 

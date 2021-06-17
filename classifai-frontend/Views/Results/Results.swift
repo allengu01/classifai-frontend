@@ -11,11 +11,13 @@ import SwiftUI
 
 struct Results: View {
     @EnvironmentObject var modelData: ModelData
-    
+//    @Binding var selection: ContentNavigationState?
+    @Binding var isShowingResults: Bool
+
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .center) {
-                CircleImage(image: Image("Allen"))
+                CircleImage(image: modelData.image)
                     .frame(width: geometry.size.width*0.6, height: geometry.size.width*0.6, alignment: .topLeading)
                     .padding(.top, geometry.size.height*0.09)
                     .padding(.bottom, geometry.size.height*0.05)
@@ -73,7 +75,7 @@ struct Results: View {
 
 struct Results_Previews: PreviewProvider {
     static var previews: some View {
-        Results()
+        Results(isShowingResults: .constant(true))
             .environmentObject(ModelData())
     }
 }

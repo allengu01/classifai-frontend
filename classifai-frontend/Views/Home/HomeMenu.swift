@@ -9,8 +9,7 @@ import SwiftUI
 
 struct HomeMenu: View {
     
-    @State private var isShowPhotoLibrary = false
-    @State private var image = UIImage()
+    @Binding var isShowPhotoLibrary: Bool
     
     var body: some View {
         VStack(alignment: .center) {
@@ -33,15 +32,11 @@ struct HomeMenu: View {
             .fill(Color(red: 84/255, green: 98/255, blue: 123/255))
         )
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
-        .sheet(isPresented: $isShowPhotoLibrary) {
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-        }
-        
     }
 }
 
 struct HomeMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HomeMenu()
+        HomeMenu(isShowPhotoLibrary: .constant(false))
     }
 }
