@@ -15,7 +15,7 @@ struct Home: View {
     @State private var inputImage: UIImage? // ImagePicker
     @EnvironmentObject var modelData: ModelData
 //    @Binding var selection: ContentNavigationState?
-    @Binding var isShowingResults: Bool
+    @State private var isShowingResults: Bool = false
 
     // On dismissing the modal, stores image to environment and sends to backend
     func loadImage() {
@@ -37,7 +37,7 @@ struct Home: View {
                     .padding(.leading, geometry.size.width * 0.133)
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.4, alignment: .bottomLeading)
                     
-                HomeMenu(isShowPhotoLibrary: $showingImagePicker)
+                HomeMenu(isShowPhotoLibrary: $showingImagePicker, isShowingResults: $isShowingResults)
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: self.$inputImage)
@@ -49,7 +49,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(isShowingResults: .constant(false))
+        Home()
             .environmentObject(ModelData())
     }
 }
