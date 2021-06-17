@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct HomeMenu: View {
-    @Binding var isShowPhotoLibrary: Bool
+    @Binding var image: Image?
+    @Binding var showingImagePicker: Bool
+    @Binding var inputImage: UIImage? // ImagePicker
     @Binding var isShowingResults: Bool
     
     var body: some View {
         VStack(alignment: .center) {
-            NavigationLink(destination: Results(isShowingResults: $isShowingResults), isActive: $isShowingResults) {
+            NavigationLink(destination: Results(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, isShowingResults: $isShowingResults), isActive: $isShowingResults) {
                 Button(action: {
-                    self.isShowPhotoLibrary = true
+                    self.showingImagePicker = true
                 }) {
                     HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
                 }
@@ -39,6 +41,6 @@ struct HomeMenu: View {
 
 struct HomeMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HomeMenu(isShowPhotoLibrary: .constant(false), isShowingResults: .constant(false))
+        PrimaryValue(value: 78)
     }
 }

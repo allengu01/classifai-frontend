@@ -11,8 +11,22 @@ import SwiftUI
 
 struct Results: View {
     @EnvironmentObject var modelData: ModelData
-//    @Binding var selection: ContentNavigationState?
+    @Binding var image: Image?
+    @Binding var showingImagePicker: Bool
+    @Binding var inputImage: UIImage? // ImagePicker
     @Binding var isShowingResults: Bool
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
+        modelData.image = image!
+        
+        // Send to backend here
+        
+        // Navigate to Results view
+        isShowingResults = true
+        showingImagePicker = false
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -49,7 +63,13 @@ struct Results: View {
                         }
                     }
                     Spacer()
-                    ResultsTryAgainButton(primaryText: "try again")
+                    VStack(alignment: .center) {
+                            Button(action: {
+                                self.showingImagePicker = true
+                            }) {
+                                ResultsTryAgainButton(primaryText: "try again")
+                            }
+                    }
                     .padding(.bottom, 80)
 
                 }
@@ -65,6 +85,9 @@ struct Results: View {
                     .fill(Color(red: 84/255, green: 98/255, blue: 123/255))
                 )
                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                    ImagePicker(selectedImage: self.$inputImage)
+                }
             }
             .ignoresSafeArea()
         }
@@ -75,7 +98,6 @@ struct Results: View {
 
 struct Results_Previews: PreviewProvider {
     static var previews: some View {
-        Results(isShowingResults: .constant(true))
-            .environmentObject(ModelData())
+        PrimaryValue(value: 78)
     }
 }
