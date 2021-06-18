@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Input: Codable {
+struct Input {
     var image: Image
 }

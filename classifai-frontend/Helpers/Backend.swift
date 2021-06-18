@@ -11,9 +11,6 @@ class Backend {
     final var ROOT_URL = "https://127.0.0.1:5000"
     
     static func classifyImage(input: Input) {
-        guard encodedInput = try? JSONEncoder().encode(input) else {
-            print("Failed to encode input")
-            return
-        }
+    
     }
 }

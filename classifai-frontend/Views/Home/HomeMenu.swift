@@ -41,6 +41,6 @@ struct HomeMenu: View {
 
 struct HomeMenu_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryValue(value: 78)
+        HomeMenu()
     }
 }
