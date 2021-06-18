@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156CFCFC267C1AC000054252 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156CFCFB267C1AC000054252 /* Loading.swift */; };
 		15A0BFEB2674A11600BF0F41 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0BFEA2674A11600BF0F41 /* CircleImage.swift */; };
 		15A0BFFE2674A6D500BF0F41 /* PrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0BFFD2674A6D500BF0F41 /* PrimaryLabel.swift */; };
 		15A0C0012674A9CB00BF0F41 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0C0002674A9CB00BF0F41 /* SecondaryLabel.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		156CFCFB267C1AC000054252 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		15A0BFEA2674A11600BF0F41 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		15A0BFFD2674A6D500BF0F41 /* PrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLabel.swift; sourceTree = "<group>"; };
 		15A0C0002674A9CB00BF0F41 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156CFCF5267C1A8500054252 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				156CFCFB267C1AC000054252 /* Loading.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		15A0BFF92674A50500BF0F41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +200,9 @@
 		9668FFA7267353A50063FCCD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				96F2DDD5267BE8E300A22B14 /* Results */,
 				96F2DDD3267BE8CE00A22B14 /* Home */,
+				96F2DDD5267BE8E300A22B14 /* Results */,
+				156CFCF5267C1A8500054252 /* Loading */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 			files = (
 				9668000026747ABD0063FCCD /* HomeButton.swift in Sources */,
 				15A0C0072674ABA100BF0F41 /* SecondaryValue.swift in Sources */,
+				156CFCFC267C1AC000054252 /* Loading.swift in Sources */,
 				96F2DDD1267BE8C300A22B14 /* PhotoPicker.swift in Sources */,
 				15A0C0222675BECE00BF0F41 /* ImagePicker.swift in Sources */,
 				96592CE0267C15FB001E4FF7 /* Backend.swift in Sources */,
