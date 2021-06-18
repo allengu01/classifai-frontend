@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct Loading: View {
+    //https://developer.apple.com/documentation/swiftui/progressview?changes=latest_major
+    
+    @State private var progress = 0.5
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ProgressView(value: progress)
+            Button("More", action: { progress += 0.05 })
+        }
     }
 }
 
