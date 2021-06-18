@@ -24,7 +24,6 @@ class Fonts {
     }
     
     public static func getFont(_ family: FontFamily, _ weight: FontWeight, _ size: CGFloat) -> Font {
-        print("\(family.rawValue)\(weight.rawValue)")
         return Font.custom("\(family.rawValue)\(weight.rawValue)", size: size)
     }
 }

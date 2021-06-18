@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 struct Input {
-    var image: Image
+    var image: UIImage
 }
