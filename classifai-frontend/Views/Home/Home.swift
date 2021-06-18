@@ -24,6 +24,9 @@ struct Home: View {
         modelData.image = image!
         
         // Send to backend here
+        var input = Input()
+        input.image = image
+        Backend.classifyImage(input: input)
         
         // Navigate to Results view
         isShowingResults = true
