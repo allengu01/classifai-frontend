@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct HomeMenu: View {
-    @Binding var image: Image?
     @Binding var showingImagePicker: Bool
-    @Binding var inputImage: UIImage? // ImagePicker
     @Binding var isShowingResults: Bool
     
     var body: some View {
         VStack(alignment: .center) {
-            NavigationLink(destination: Results(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, isShowingResults: $isShowingResults), isActive: $isShowingResults) {
+            NavigationLink(destination: Results(isShowingResults: $isShowingResults), isActive: $isShowingResults) {
                 Button(action: {
                     self.showingImagePicker = true
                 }) {
@@ -41,6 +39,6 @@ struct HomeMenu: View {
 
 struct HomeMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HomeMenu()
+        HomeMenu(showingImagePicker: .constant(false), isShowingResults: .constant(false))
     }
 }

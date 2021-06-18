@@ -11,9 +11,9 @@ import SwiftUI
 
 struct Results: View {
     @EnvironmentObject var modelData: ModelData
-    @Binding var image: Image?
-    @Binding var showingImagePicker: Bool
-    @Binding var inputImage: UIImage? // ImagePicker
+    @State var image: Image?
+    @State var showingImagePicker: Bool = false
+    @State var inputImage: UIImage? // ImagePicker
     @Binding var isShowingResults: Bool
     
     func loadImage() {
@@ -98,6 +98,7 @@ struct Results: View {
 
 struct Results_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryValue(value: 78)
+        Results(isShowingResults: .constant(true))
+            .environmentObject(ModelData())
     }
 }

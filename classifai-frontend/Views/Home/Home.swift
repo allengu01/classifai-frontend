@@ -39,7 +39,7 @@ struct Home: View {
                     .padding(.leading, geometry.size.width * 0.133)
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.4, alignment: .bottomLeading)
                     
-                HomeMenu(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, isShowingResults: $isShowingResults)
+                HomeMenu(showingImagePicker: $showingImagePicker, isShowingResults: $isShowingResults)
                 
             }
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
