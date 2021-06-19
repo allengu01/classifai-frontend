@@ -12,12 +12,11 @@ import Alamofire
 
 class Backend {
     static var ROOT_URL = "http://127.0.0.1:5000"
-    @EnvironmentObject var modelData: ModelData
     
     // https://stackoverflow.com/questions/55626235/how-to-upload-image-multipart-using-alamofire-5-0-0-beta-3-swift-5
-    static func classifyImage(image: UIImage, _ completion: @escaping () -> Void) {
+    static func classifyImage(image: UIImage, _ completion: @escaping() -> Void) -> Result {
+        var result = Result(labels: ["POOPSICLE", "NA", "NA", "NA"], values: [0, 0, 0, 0])
         let endpoint = "\(ROOT_URL)/api/v1.0/classify"
-        
         let headers: HTTPHeaders = ["Content-Type": "multipart/form-data",
                                     "Content-Disposition": "form-data"]
     
@@ -30,13 +29,13 @@ class Backend {
                         let decoder = JSONDecoder()
 
                         do {
-                            let result = try decoder.decode(Result.self, from: jsonData)
-                            print(result.label)
+                            result = try decoder.decode(Result.self, from: jsonData)
                         } catch {
                             print(error.localizedDescription)
                         }
                     }
                 }
+        return result
         
 //        AF.upload(multipartFormData: { multipartFormData in
 //            guard let imageData = image.jpegData(compressionQuality: 1) else { return }

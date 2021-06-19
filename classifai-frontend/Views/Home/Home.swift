@@ -24,7 +24,9 @@ struct Home: View {
         modelData.image = image!
         
         // Send to backend here
-        Backend.classifyImage(image: inputImage)
+        let result = Backend.classifyImage(image: inputImage)
+        modelData.labels = result.labels
+        modelData.values = result.values
         
         // Navigate to Results view
         isShowingResults = true
