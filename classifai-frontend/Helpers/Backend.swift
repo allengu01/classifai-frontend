@@ -20,13 +20,30 @@ class Backend {
         
         let headers: HTTPHeaders = ["Content-Type": "multipart/form-data",
                                     "Content-Disposition": "form-data"]
-        
+    
         AF.upload(multipartFormData: { multipartFormData in
-            guard let imageData = image.jpegData(compressionQuality: 1) else { return }
-            multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-        }, to: endpoint, method: .post, headers: headers).responseJSON {
-                response in
-            debugPrint(response)
-        }
+                    guard let imageData = image.jpegData(compressionQuality: 1) else { return }
+                    multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
+                }, to: endpoint, method: .post, headers: headers).responseJSON { (response) in
+                    if let jsonData = response.data
+                    {
+                        let decoder = JSONDecoder()
+
+                        do {
+                            let result = try decoder.decode(Result.self, from: jsonData)
+                            print(result.label)
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+        
+//        AF.upload(multipartFormData: { multipartFormData in
+//            guard let imageData = image.jpegData(compressionQuality: 1) else { return }
+//            multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
+//        }, to: endpoint, method: .post, headers: headers).responseDecodable(of: Result.self) { (response) in
+//            guard let result = response.value else { return }
+//            print(result.label)
+//        }
     }
 }

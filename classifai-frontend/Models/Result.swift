@@ -8,5 +8,6 @@
 import Foundation
 
 struct Result: Codable {
-    
+    var label: String
+    var value: Int
 }
