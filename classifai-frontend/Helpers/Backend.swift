@@ -14,7 +14,7 @@ class Backend {
     static var ROOT_URL = "http://127.0.0.1:5000"
     
     // https://stackoverflow.com/questions/55626235/how-to-upload-image-multipart-using-alamofire-5-0-0-beta-3-swift-5
-    static func classifyImage(image: UIImage, _ completion: @escaping() -> Void) -> Result {
+    static func classifyImage(image: UIImage, completion: @escaping (Result) -> Void) {
         var result = Result(labels: ["POOPSICLE", "NA", "NA", "NA"], values: [0, 0, 0, 0])
         let endpoint = "\(ROOT_URL)/api/v1.0/classify"
         let headers: HTTPHeaders = ["Content-Type": "multipart/form-data",
@@ -30,19 +30,11 @@ class Backend {
 
                         do {
                             result = try decoder.decode(Result.self, from: jsonData)
+                            completion(result)
                         } catch {
                             print(error.localizedDescription)
                         }
                     }
                 }
-        return result
-        
-//        AF.upload(multipartFormData: { multipartFormData in
-//            guard let imageData = image.jpegData(compressionQuality: 1) else { return }
-//            multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-//        }, to: endpoint, method: .post, headers: headers).responseDecodable(of: Result.self) { (response) in
-//            guard let result = response.value else { return }
-//            print(result.label)
-//        }
     }
 }

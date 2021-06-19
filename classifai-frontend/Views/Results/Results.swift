@@ -22,12 +22,13 @@ struct Results: View {
         modelData.image = image!
         
         // Send to backend here
-        let result = Backend.classifyImage(image: inputImage)
-        modelData.labels = result.labels
-        modelData.values = result.values
-        
-        // Navigate to Results view
-        isShowingResults = true
+        Backend.classifyImage(image: inputImage, completion: { result in
+            modelData.labels = result.labels
+            modelData.values = result.values
+            
+            // Navigate to Results view
+            isShowingResults = true
+        })
         showingImagePicker = false
     }
 
