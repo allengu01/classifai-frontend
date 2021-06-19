@@ -15,7 +15,7 @@ class Backend {
     @EnvironmentObject var modelData: ModelData
     
     // https://stackoverflow.com/questions/55626235/how-to-upload-image-multipart-using-alamofire-5-0-0-beta-3-swift-5
-    static func classifyImage(image: UIImage) {
+    static func classifyImage(image: UIImage, _ completion: @escaping () -> Void) {
         let endpoint = "\(ROOT_URL)/api/v1.0/classify"
         
         let headers: HTTPHeaders = ["Content-Type": "multipart/form-data",
