@@ -18,13 +18,23 @@ class Backend {
         var result = Result(labels: ["NA", "NA", "NA", "NA"], values: [0, 0, 0, 0])
         let endpoint = "\(ROOT_URL)/api/v1.0/classify"
         let endpoint2 = "https://gqm6zuhev4.execute-api.us-east-2.amazonaws.com/Test/classifai-backend"
-        let headers: HTTPHeaders = ["Content-Type": "multipart/form-data",
+        let endpoint3 = "https://hntztmbe26.execute-api.us-east-2.amazonaws.com/default/classifai-backend"
+        let headers: HTTPHeaders = ["Accept": "multipart/form-data",
+                                    "Content-Type": "multipart/form-data",
                                     "Content-Disposition": "form-data"]
-    
+        
+//          TESTING
+//        AF.upload(multipartFormData: { multipartFormData in
+//                    guard let imageData = image.jpegData(compressionQuality: 1) else { return }
+//                    multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
+//        }, to: endpoint3, method: .post, headers: headers).responseString { string in print(string)
+//                }
+        
         AF.upload(multipartFormData: { multipartFormData in
                     guard let imageData = image.jpegData(compressionQuality: 1) else { return }
                     multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-                }, to: endpoint2, method: .post, headers: headers).responseJSON { (response) in
+                }, to: endpoint3, method: .post, headers: headers).responseJSON { (response) in
+                    print(response)
                     if let jsonData = response.data
                     {
                         let decoder = JSONDecoder()
@@ -32,7 +42,7 @@ class Backend {
                             result = try decoder.decode(Result.self, from: jsonData)
                             completion(result)
                         } catch {
-                            print(error.localizedDescription)
+                            print(String(describing: error))
                             debugPrint(jsonData)
                         }
                     }
