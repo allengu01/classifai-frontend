@@ -15,7 +15,6 @@ class Backend {
     
     // https://stackoverflow.com/questions/55626235/how-to-upload-image-multipart-using-alamofire-5-0-0-beta-3-swift-5
     static func classifyImage(image: UIImage, completion: @escaping (Result) -> Void) {
-        var result = Result(labels: ["NA", "NA", "NA", "NA"], values: [0, 0, 0, 0])
         let endpoint = "\(ROOT_URL)/api/v1.0/classify"
         let endpoint2 = "https://gqm6zuhev4.execute-api.us-east-2.amazonaws.com/Test/classifai-backend"
         let endpoint3 = "https://hntztmbe26.execute-api.us-east-2.amazonaws.com/default/classifai-backend"
@@ -39,8 +38,8 @@ class Backend {
                     {
                         let decoder = JSONDecoder()
                         do {
-                            result = try decoder.decode(Result.self, from: jsonData)
-                            completion(result)
+                            var result = try decoder.decode(Request<Result>.self, from: jsonData)
+                            completion(result.body)
                         } catch {
                             print(String(describing: error))
                             debugPrint(jsonData)
