@@ -18,7 +18,7 @@ struct HomeMenu: View {
                 Button(action: {
                     self.showingImageSelection = true
                 }) {
-                    HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
+                    CustomButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
                 }
                 .padding(.vertical, 10)
             }
@@ -26,7 +26,7 @@ struct HomeMenu: View {
                 Button(action: {
                     self.selection = "createDataset"
                 }) {
-                    HomeButton(primaryText: "create a dataset", secondaryText: "Add images to a dataset.")
+                    CustomButton(primaryText: "create a dataset", secondaryText: "Add images to a dataset.")
                 }
                 .padding(.vertical, 10)
             }

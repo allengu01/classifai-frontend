@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Request<T: Codable>: Codable {
+struct Response<T: Codable>: Codable {
     var statusCode: Int?
     var headers: Dictionary<String, String>?
     var body: T

@@ -28,8 +28,8 @@ struct TextFieldRow: View {
                 .disableAutocorrection(true)
                 .font(Fonts.getFont(.nunito, .regular, 18))
                 .padding(.horizontal, 10)
-                .border(Color(UIColor.separator))
                 .cornerRadius(5)
+                .border(Color(UIColor.separator))
         }
     }
 }

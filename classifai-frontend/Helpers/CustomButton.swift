@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeButton: View {
+struct CustomButton: View {
     var primaryText: String
     var secondaryText: String?
     
@@ -35,8 +35,8 @@ struct HomeButton: View {
     }
 }
 
-struct HomeButton_Previews: PreviewProvider {
+struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
+        CustomButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
     }
 }

@@ -12,10 +12,8 @@ struct Home: View {
 //    @State private var photoPickerIsPresented: Bool = false
 //    @State private var pickerResult: [UIImage] = [] // PHPicker
     @EnvironmentObject var modelData: ModelData
-    @EnvironmentObject var partialSheetManager: PartialSheetManager
 //    @Binding var selection: ContentNavigationState?
     @State private var image: Image?
-    @State private var showingImagePicker: Bool = false
     @State private var showingImageSelection: Bool = false
     @State private var showingPhotoLibrary: Bool = false
     @State private var showingCamera: Bool = false
@@ -28,27 +26,15 @@ struct Home: View {
         image = Image(uiImage: inputImage)
         modelData.image = image!
         
-        // Send to backend here
-        Backend.classifyImage(image: inputImage, completion: { result in
+        let scaledImage = inputImage.scale(targetSize: CGSize(width: 100, height: 100))
+            // Send to backend here
+        Backend.classifyImage(image: scaledImage, completion: { result in
             modelData.labels = result.labels
             modelData.values = result.values
             
             // Navigate to Results view
             selection = "results"
         })
-    }
-    
-    func showPhotoLibrary() -> ImagePicker {
-        let imagePicker = ImagePicker(sourceType: .photoLibrary, selectedImage: self.$inputImage)
-        return imagePicker
-    }
-    
-    func showCamera() -> ImagePicker {
-        let imagePicker = ImagePicker(sourceType: .camera, selectedImage: self.$inputImage)
-//        if let imagePickerController = imagePicker.imagePickerController {
-//            imagePickerController.cameraFlashMode = .off
-//        }
-        return imagePicker
     }
     
     var body: some View {
@@ -66,11 +52,10 @@ struct Home: View {
                 ImageSelection(showingImageSelection: $showingImageSelection, showingPhotoLibrary: $showingPhotoLibrary, showingCamera: $showingCamera)
             }
             .sheet(isPresented: $showingPhotoLibrary, onDismiss: loadImage) {
-                showPhotoLibrary()
+                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$inputImage)
             }
             .sheet(isPresented: $showingCamera, onDismiss: loadImage) {
-                showCamera()
-
+                ImagePicker(sourceType: .camera, selectedImage: self.$inputImage)
             }
             .ignoresSafeArea()
         }
