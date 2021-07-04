@@ -14,7 +14,8 @@ struct Results: View {
     @State var image: Image?
     @State var showingImagePicker: Bool = false
     @State var inputImage: UIImage? // ImagePicker
-    @Binding var isShowingResults: Bool
+//    @Binding var isShowingResults: Bool
+    @Binding var selection: String?
     
     func loadImage() {
         guard let inputImage = inputImage else { return }
@@ -27,7 +28,8 @@ struct Results: View {
             modelData.values = result.values
             
             // Navigate to Results view
-            isShowingResults = true
+//            isShowingResults = true
+            selection = "results"
         })
         showingImagePicker = false
     }
@@ -90,7 +92,7 @@ struct Results: View {
                 )
                 .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                    ImagePicker(selectedImage: self.$inputImage)
+                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$inputImage)
                 }
             }
             .ignoresSafeArea()
@@ -102,7 +104,9 @@ struct Results: View {
 
 struct Results_Previews: PreviewProvider {
     static var previews: some View {
-        Results(isShowingResults: .constant(true))
+        Results(selection: .constant("results"))
             .environmentObject(ModelData())
+//        Results(isShowingResults: .constant(true))
+//            .environmentObject(ModelData())
     }
 }

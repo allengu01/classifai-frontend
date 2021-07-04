@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct HomeMenu: View {
-    @Binding var showingImagePicker: Bool
-    @Binding var isShowingResults: Bool
+    @Binding var showingImageSelection: Bool
+//    @Binding var isShowingResults: Bool
+    @Binding var selection: String?
     
     var body: some View {
         VStack(alignment: .center) {
-            NavigationLink(destination: Results(isShowingResults: $isShowingResults), isActive: $isShowingResults) {
+            NavigationLink(destination: Results(selection: $selection), tag: "results", selection: $selection) {
                 Button(action: {
-                    self.showingImagePicker = true
+                    self.showingImageSelection = true
                 }) {
                     HomeButton(primaryText: "get started", secondaryText: "Take or choose a photo.")
                 }
+                .padding(.vertical, 10)
+            }
+            NavigationLink(destination: CreateDataset(selection: $selection), tag: "createDataset", selection: $selection) {
+                Button(action: {
+                    self.selection = "createDataset"
+                }) {
+                    HomeButton(primaryText: "create a dataset", secondaryText: "Add images to a dataset.")
+                }
+                .padding(.vertical, 10)
             }
             Spacer()
         }
@@ -39,6 +49,7 @@ struct HomeMenu: View {
 
 struct HomeMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HomeMenu(showingImagePicker: .constant(false), isShowingResults: .constant(false))
+        HomeMenu(showingImageSelection: .constant(false), selection: .constant(nil))
+//        HomeMenu(showingImagePicker: .constant(false), isShowingResults: .constant(false))
     }
 }
