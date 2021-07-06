@@ -9,5 +9,5 @@ import Foundation
 
 struct Result: Codable {
     var labels: [String]
-    var values: [Int]
+    var values: [Double]
 }

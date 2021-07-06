@@ -48,7 +48,7 @@ struct Results: View {
                             .fill(Color.gray)
                             .frame(width: 2, height: 18)
                             .edgesIgnoringSafeArea(.horizontal)
-                        PrimaryValue(value: modelData.values[0])
+                        PrimaryValue(value: round(1000 * modelData.values[0]) / 10)
                     }
                     .padding(.top, 25)
                     Rectangle()
@@ -60,12 +60,10 @@ struct Results: View {
                         VStack (alignment: .leading, spacing: 10) {
                             SecondaryLabel(label: modelData.labels[1])
                             SecondaryLabel(label: modelData.labels[2])
-                            SecondaryLabel(label: modelData.labels[3])
                         }
                         VStack (alignment: .trailing, spacing: 15){
-                            SecondaryValue(value: modelData.values[1])
-                            SecondaryValue(value: modelData.values[2])
-                            SecondaryValue(value: modelData.values[3])
+                            SecondaryValue(value: round(1000 * modelData.values[1]) / 10)
+                            SecondaryValue(value: round(1000 * modelData.values[2]) / 10)
                         }
                     }
                     Spacer()

@@ -9,10 +9,7 @@ import SwiftUI
 import PartialSheet
 
 struct Home: View {
-//    @State private var photoPickerIsPresented: Bool = false
-//    @State private var pickerResult: [UIImage] = [] // PHPicker
     @EnvironmentObject var modelData: ModelData
-//    @Binding var selection: ContentNavigationState?
     @State private var image: Image?
     @State private var showingImageSelection: Bool = false
     @State private var showingPhotoLibrary: Bool = false
@@ -26,7 +23,7 @@ struct Home: View {
         image = Image(uiImage: inputImage)
         modelData.image = image!
         
-        let scaledImage = inputImage.scale(targetSize: CGSize(width: 100, height: 100))
+        let scaledImage = inputImage.scale(targetSize: CGSize(width: 224, height: 224))
             // Send to backend here
         Backend.classifyImage(image: scaledImage, completion: { result in
             modelData.labels = result.labels

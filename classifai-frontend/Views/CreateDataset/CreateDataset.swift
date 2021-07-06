@@ -12,8 +12,8 @@ struct CreateDataset: View {
     @Binding var selection: String?
     @State var dataset: String = ""
     @State var label: String = ""
-    @State var isEditingDataset = false
-    @State var isEditingLabel = false
+//    @State var isEditingDataset = false
+//    @State var isEditingLabel = false
     
     @State private var showingImageSelection: Bool = false
     @State private var showingPhotoLibrary: Bool = false
@@ -23,7 +23,7 @@ struct CreateDataset: View {
     // On dismissing the modal, stores image to environment and sends to backend
     func loadImage() {
         guard let inputImage = inputImage else { return }
-        let scaledImage = inputImage.scale(targetSize: CGSize(width: 100, height: 100))
+        let scaledImage = inputImage.scale(targetSize: CGSize(width: 224, height: 224))
         // Send to backend here
         Backend.addToDataset(image: scaledImage, dataset: dataset, label: label) { result in
             
@@ -32,10 +32,9 @@ struct CreateDataset: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            TextFieldRow(label: "Dataset:", placeholder: "Dataset name", text: $dataset, isEditing: $isEditingDataset)
+            TextFieldRow(label: "Dataset:", placeholder: "Dataset name", text: $dataset)
                 .padding(.horizontal, 20)
-                .padding(.top, 120)
-            TextFieldRow(label: "Label:", placeholder: "Image label", text: $label, isEditing: $isEditingLabel)
+            TextFieldRow(label: "Label:", placeholder: "Image label", text: $label)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
             VStack {
@@ -68,7 +67,7 @@ struct CreateDataset: View {
         .sheet(isPresented: $showingCamera, onDismiss: loadImage) {
             ImagePicker(sourceType: .camera, selectedImage: self.$inputImage)
         }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.bottom)
         .addPartialSheet(style: PartialSheetStyle(background: .solid(Color.white), accentColor: Color(UIColor.systemGray2), enableCover: true, coverColor: Color.black.opacity(0.4), cornerRadius: 20, minTopDistance: 0)
         )
     }

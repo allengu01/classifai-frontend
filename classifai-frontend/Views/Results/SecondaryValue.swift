@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SecondaryValue: View {
-    var value: Int
+    var value: Double
     
     var body: some View {
         Text(String(value) + "%")

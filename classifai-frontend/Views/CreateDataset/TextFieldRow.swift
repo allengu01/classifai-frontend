@@ -11,7 +11,7 @@ struct TextFieldRow: View {
     var label: String
     var placeholder: String
     @Binding var text: String
-    @Binding var isEditing: Bool
+//    @Binding var isEditing: Bool
     
     var body: some View {
         HStack {
@@ -19,11 +19,7 @@ struct TextFieldRow: View {
                 .font(Fonts.getFont(.nunito, .bold, 18))
                 .frame(width: 100, alignment: .leading)
                 .fixedSize()
-            TextField(placeholder, text: $text) { isEditing in
-                self.isEditing = isEditing
-            } onCommit: {
-                
-            }
+            TextField(placeholder, text: $text)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .font(Fonts.getFont(.nunito, .regular, 18))
@@ -36,6 +32,6 @@ struct TextFieldRow: View {
 
 struct TextFieldRow_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldRow(label: "Dataset", placeholder: "Dataset name", text: .constant("Dataset"), isEditing: .constant(true))
+        TextFieldRow(label: "Dataset", placeholder: "Dataset name", text: .constant("Dataset"))
     }
 }

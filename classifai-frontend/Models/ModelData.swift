@@ -23,5 +23,5 @@ import SwiftUI
 final class ModelData: ObservableObject {
     @Published var image: Image = Image("Allen")
     @Published var labels: [String] = ["NA", "NA", "NA", "NA"]
-    @Published var values: [Int] = [0, 0, 0, 0]
+    @Published var values: [Double] = [0, 0, 0, 0]
 }
